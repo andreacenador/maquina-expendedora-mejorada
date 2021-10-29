@@ -89,16 +89,27 @@ public class MaquinaExpendedoraMejorada {
     
     public int vaciarDineroDeLaMaquina() {
         int vaciarDineroDeLaMaquina;
+        vaciarDineroDeLaMaquina = -1;
         if (balanceClienteActual == 0) {
             vaciarDineroDeLaMaquina = balanceClienteActual + totalDineroAcumulado;
-            balanceClienteActual = 0;
             totalDineroAcumulado = 0;
         }
         else {
             System.out.println("Error, la maquina tiene una operación en curso");
-            vaciarDineroDeLaMaquina = -1;
         }
         return vaciarDineroDeLaMaquina;
         
+    }
+    
+    public int getNumeroBilletesVendidos(){
+        int numeroBilletesVendidos;
+        numeroBilletesVendidos = totalDineroAcumulado / precioBillete;
+        return numeroBilletesVendidos;
+    }
+    
+    public void imprimeNumeroBilletesVendidos(){
+        int imprimeNumeroBilletesVendidos;
+        imprimeNumeroBilletesVendidos = totalDineroAcumulado / precioBillete;
+        System.out.println("Has imprimido " + imprimeNumeroBilletesVendidos + " billetes");
     }
 }
