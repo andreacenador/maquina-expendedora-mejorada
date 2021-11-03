@@ -80,9 +80,12 @@ public class MaquinaExpendedoraMejorada {
                 System.out.println("##################");
                 System.out.println();
                 if (tipoDeMaquina == false) {
-                    int premioDeDescuento = 0;
-                    premioDeDescuento = (precioBillete * 10) / 100;
-                    System.out.println("PREMIO, descuento de " + premioDeDescuento + "€");
+                    int aplicarPremio = contadorDeBilletes % 3;
+                    if (aplicarPremio == 0) {
+                        int premioDeDescuento = 0;
+                        premioDeDescuento = (precioBillete * 10) / 100;
+                        System.out.println("PREMIO, descuento de " + premioDeDescuento + "€");
+                    }
                 }
         
                 // Actualiza el total de dinero acumulado en la maquina
